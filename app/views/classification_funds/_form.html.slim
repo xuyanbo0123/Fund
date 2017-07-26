@@ -1,0 +1,9 @@
+= form_for @classification_fund do |f|
+  - if @classification_fund.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@classification_fund.errors.count, "error")} prohibited this classification_fund from being saved:"
+      ul
+        - @classification_fund.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit

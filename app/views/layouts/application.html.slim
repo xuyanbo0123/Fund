@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title Fund
+    = stylesheet_link_tag    'application', media: 'all'
+    link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css"
+    /link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+    = javascript_include_tag 'application'
+    script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"
+    /script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"
+    = csrf_meta_tags
+  body
+    = yield

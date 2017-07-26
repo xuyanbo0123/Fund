@@ -1,0 +1,51 @@
+h1 天天基金 分级基金
+section#all-funds
+  .container
+    table#classification-funds
+      thead
+        tr
+          th 自定义序列
+          th 基金代码
+          th 基金简称
+          th 今日单位净值
+          th 今日累计净值
+          th 昨日单位净值
+          th 昨日累计净值
+          th 日增长值
+          th 日增长率
+          th 市价
+          th 折价率
+          th 费率
+          th 溢价率
+      tfoot
+        tr
+          th 自定义序列
+          th 基金代码
+          th 基金简称
+          th 今日单位净值
+          th 今日累计净值
+          th 昨日单位净值
+          th 昨日累计净值
+          th 日增长值
+          th 日增长率
+          th 市价
+          th 折价率
+          th 费率
+          th 溢价率
+      tbody
+        - @classification_fund_sets.each_with_index do |s, i|
+          - s.to_a.each_with_index do |classification_fund, j|
+            tr
+              td = (i + 1).to_s + '.' + j.to_s
+              td = classification_fund.code
+              td = classification_fund.name
+              td = classification_fund.net_value_today
+              td = classification_fund.accumulative_value_today
+              td = classification_fund.net_value_yesterday
+              td = classification_fund.accumulative_value_yesterday
+              td = classification_fund.increased_value
+              td = number_to_percentage(classification_fund.increased_rate, precision: 2)
+              td = classification_fund.market_price
+              td = number_to_percentage(classification_fund.rate, precision: 2)
+              td = classification_fund.fee
+              td = classification_fund.surplus_rate_str

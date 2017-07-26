@@ -1,0 +1,20 @@
+# Use PostgreSQL
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  username: user
+  password: 1234
+
+development:
+  <<: *default
+  database: fund_development
+
+
+test: &TEST
+  <<: *default
+  database: fund_test
+
+production:
+  <<: *default
+  database: fund_production
